@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PatientDao">
+    <select id="findByPhone" resultType="Patient">
+        select id, nickname,pname ,phonenum, password from patient where phonenum = #{phonenum};
+    </select>
+
+    <resultMap id="OrderMap" type="Order">
+        <id property="id" column="id"/>
+        <result property="starttime" column="starttime"/>
+        <result property="degree" column="degree"/>
+        <result property="status" column="status"/>
+        <result property="comment" column="comment"/>
+        <collection property="patient" ofType="Patient">
+            <id property="id" column="patientid"/>
+            <result property="nickname" column="nickname"/>
+            <result property="pname" column="pname"/>
+            <result property="phonenum" column="phonenum"/>
+            <result property="email" column="email"/>
+            <result property="sex" column="sex"/>
+            <result property="age" column="age"/>
+            <result property="address" column="address"/>
+        </collection>
+        <collection property="doctor" ofType="Doctor">
+            <id property="id" column="doctorid"/>
+            <result property="doctorname" column="doctorname"/>
+            <collection property="office" ofType="Office">
+                <id property="id" column="officeid"/>
+                <result property="officename" column="officename"/>
+            </collection>
+        </collection>
+    </resultMap>
+    <select id="findOrderAllById" resultMap="OrderMap">
+        SELECT `order`.id, starttime, degree, status, comment, patientid, nickname, pname, patient.phonenum, email, patient.sex, patient.age, address, doctorid, doctorname, officeid, officename FROM ((`order` INNER JOIN patient ON patientid = patient.id) INNER JOIN doctor ON doctorid = doctor.id) INNER JOIN office ON officeid = office.id WHERE patientid = #{patientId};
+    </select>
+
+    <insert id="addPatient" parameterType="Patient">
+        insert into patient(nickname, pname, phonenum, password, email, sex, age, address) values(#{patient.nickname}, #{patient.pname}, #{patient.phonenum}, #{patient.password}, #{patient.email}, #{patient.sex}, #{patient.age}, #{patient.address});
+    </insert>
+</mapper>

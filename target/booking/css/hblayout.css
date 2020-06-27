@@ -1,0 +1,519 @@
+/*#region BASE */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fcfcfc;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.body-content {
+    margin-top: 120px;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+a,
+div {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.button {
+    padding: 5px 15px 5px 15px;
+    margin: 5px auto;
+    border: solid 1px #4be6be;
+    border-radius: 5px 5px;
+}
+
+.nobgcolor {
+    background-color: transparent !important;
+}
+
+.noborder {
+    border: 0 !important;
+}
+
+.noborder-top {
+    border-top: 0 !important;
+}
+
+input[type=submit],
+input[type=button] {
+    padding: 5px 15px 5px 15px;
+    margin: 5px auto;
+    border: solid 1px #4be6be;
+    border-radius: 5px 5px;
+}
+
+input[type=submit].white,
+input[type=button].white {
+    background-color: #3c86cf;
+    color: white;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.clear {
+    clear: both;
+    overflow: hidden;
+    height: 0;
+}
+
+.margintop15 {
+    margin-top: 15px;
+}
+
+.freeze {
+    color: gray;
+}
+
+.smalltext {
+    font-size: 0.7em !important;
+}
+
+
+/*#endregion */
+
+
+/*#region NAV */
+
+.navbar {
+    width: 100%;
+    padding-top: 28px;
+}
+
+.navbar_logo {
+    width: 174px;
+    height: 64px;
+    float: left;
+}
+
+.navbar_text {
+    float: right;
+}
+
+
+/*#endregion */
+
+
+/*#region CONTROL */
+
+
+/*#region input-line */
+
+.input-line {
+    font-size: 1.2em;
+    height: 42px;
+    line-height: 42px;
+    background-color: #FFFFFF;
+}
+
+.input-line .input-checkcode {
+    height: 42px;
+}
+
+.input-line input {
+    height: 40px !important;
+}
+
+.input-line .input-text {
+    float: left;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    width: 30%;
+    height: 100%;
+}
+
+.input-line .input-text .text {
+    text-align: right;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.input-line .input-icon {
+    float: left;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    width: 40px;
+    height: 100%;
+}
+
+.input-line .input-icon .icon {
+    background-color: #aaabab;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.input-line .input-control {
+    float: left;
+    border: solid 1px #EEE;
+    width: 70%;
+    height: 100%;
+}
+
+.input-line .input-control-30 {
+    float: left;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    width: 30%;
+    height: 100%;
+}
+
+.input-line .input-control-40 {
+    float: left;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    width: 40%;
+    height: 100%;
+}
+
+.input-line .input-control-50 {
+    float: left;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    width: 50%;
+    height: 100%;
+}
+
+.input-line .input-control-full {
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    width: 100%;
+    text-align: center;
+}
+
+.input-line .input-control-full input[type=button],
+.input-line .input-control-full input[type=submit] {
+    width: 300px !important;
+}
+
+.input-line .input-control input[type=button],
+.input-line .input-control input[type=submit] {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.0em;
+}
+
+.input-line .input-control input[type=text],
+.input-line .input-control input[type=password] {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.0em;
+}
+
+
+/*#endregion */
+
+
+/*#endregion */
+
+
+/*#region LOGIN PANNEL */
+
+.loginpanel {
+    background-image: url(../img/login-background.png);
+    height: 700px;
+}
+
+.loginpanel .loginbox {
+    width: 584px;
+    height: 610px;
+    background-color: #FFF;
+    position: relative;
+    right: 130px;
+    top: 120px;
+    float: right;
+}
+
+.findpanelspace {
+    height: 100px;
+}
+
+.findpanel,
+.findpanelsize {
+    background-color: #FFF;
+    height: 584px;
+    width: 610px;
+    margin: 0 auto;
+    border-radius: 10px 10px;
+    padding: 15px;
+}
+
+
+/*#endregion */
+
+
+/*#region LOGIN PANNEL */
+
+.tabs {}
+
+.tabs .tab {
+    border-bottom: solid 1px #dddddd;
+    float: left;
+    height: 51px;
+    line-height: 50px;
+}
+
+.tabs .tab-50 {
+    width: 50% !important;
+}
+
+.tabs .tab .tab_title {
+    text-align: center;
+    cursor: default;
+}
+
+.tabs .tab.active {
+    border-bottom: solid 2px #0094ff;
+    color: #0094ff;
+    height: 50px;
+}
+
+.tabs .tab_item {
+    display: none;
+}
+
+.tabs .tab_item.active {
+    display: block !important;
+}
+
+.tabs .tab_item .tab_body {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/*#endregion */
+
+
+/*#region 验证码对话框 */
+
+.verificatondialog {
+    background-color: #FFF;
+    position: absolute !important;
+    z-index: 999;
+    display: none;
+}
+
+
+/*#endregion */
+
+input:focus,
+input:active:focus {
+    outline: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .navbar,
+    footer,
+    hr {
+        display: none;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .loginpanel {
+        position: relative;
+        background-image: url(../img/login-background.png);
+        height: 480px;
+    }
+    .loginpanel .loginbox {
+        position: absolute;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        padding: 0 0 20px 0;
+    }
+    .findpanel {
+        position: absolute;
+        left: 50%;
+        height: auto;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+}
+
+.weui_mask {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.weui_dialog {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #FAFAFC;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    width: 270px;
+    border-radius: 10px;
+}
+
+.weui_dialog_hd {
+    padding: 1.2em 0 .5em;
+}
+
+.weui_dialog_title {
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.weui_dialog_bd {
+    padding: 0 20px;
+    font-size: 15px;
+    color: #888;
+}
+
+.weui_dialog_ft {
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.weui_btn_dialog.primary {
+    color: #50A7FF;
+}
+
+.weui_dialog_ft a {
+    display: block;
+    text-decoration: none;
+}
+
+.font15 {
+    font-size: 15px;
+}
+
+.weui_dialog_ft:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #D5D5D6;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+
+#idc_verify_dialog {
+    top: 15px;
+}
+
+#idc_verify_dialog img {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.verify-mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.track {
+    width: 320px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    background-color: #f7f9fa;
+    color: #1688fb;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.track-left {
+    background-color: #d1e9fe;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 40px;
+    z-index: 2;
+}
+
+.track-mask {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 1;
+    opacity: 0.1;
+}
+
+.track-face {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55px;
+    height: 40px;
+    line-height: 24px;
+    z-index: 3;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 2px;
+    color: #1688fb;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.OfficeDao">
+    <select id="findAllOffice" resultType="Office">
+        select * from office;
+    </select>
+    <insert id="addOffice" parameterType="String">
+        insert  into office(officename) values(#{officename});
+    </insert>
+
+    <select id="findByOfficeid" parameterType="Integer" resultType="Doctor">
+        SELECT * FROM doctor WHERE officeid = #{officeid};
+    </select>
+    <select id="findById" parameterType="Integer" resultType="Office">
+        select  * from office where id = #{id};
+    </select>
+    <select id="findByOfficeidForIllness" parameterType="Integer" resultType="Illness">
+        SELECT illness.id, illnessname FROM officerelation INNER JOIN illness ON officerelation.illnessid = illness.id WHERE officeid = #{id};
+    </select>
+<!--    删除科室-->
+    <delete id="deleteOffice" parameterType="Integer">
+        delete from office where id = #{id};
+    </delete>
+<!--映射关系的查询，关联医生表-->
+    <resultMap id="OfficeAndDoctor" type="Office">
+        <id property="id" column="id"/>
+        <result property="officename" column="officename"/>
+        <collection property="doctors" ofType="doctor">
+            <id property="id" column="id"/>
+            <result property="doctorname" column="doctorname"/>
+            <result property="phonenum" column="phonenum"/>
+            <result property="academictitle" column="academictitle"/>
+            <result property="sex" column="sex"/>
+            <result property="age" column="age"/>
+            <result property="description" column="description"/>
+        </collection>
+    </resultMap>
+    <select id="findDoctorOnOffice" resultMap="OfficeAndDoctor">
+        SELECT officename, doctor.* from office INNER JOIN doctor ON doctor.officeid = office.id WHERE office.id = #{officeid};
+    </select>
+</mapper>

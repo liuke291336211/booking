@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WorkTimeDao">
+    <select id="findByDoctorId" resultMap="doctorMapNew">
+        select * from worktime INNER JOIN `schedule` ON worktime.scheduleid = schedule.id where doctorid = #{id};
+    </select>
+    <resultMap id="doctorMapNew" type="WorkTime">
+        <id property="id" column="id"/>
+        <result property="doctorid" column="doctorid"/>
+        <result property="scheduleid" column="scheduleid"/>
+        <result property="visitnum" column="visitnum"/>
+        <collection property="scheduleList" ofType="Schedule">
+            <id property="id" column="id"/>
+            <result property="weekday" column="weekday"/>
+            <result property="worktime" column="worktime"/>
+        </collection>
+    </resultMap>
+    <delete id="deleteByDoctorId">
+        delete from worktime where doctorid = #{id};
+    </delete>
+</mapper>

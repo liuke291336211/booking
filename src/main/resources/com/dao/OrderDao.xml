@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.OrderDao">
+    <select id="findByDoctorIdToCount" resultType="int">
+        SELECT count(id) from `order` where doctorid = #{doctorId};
+    </select>
+
+    <select id="findOrderById" resultMap="OrderMap"  >
+        SELECT order.id, ordertime, starttime, degree, comment, nickname  from `order` INNER JOIN patient ON patientid = patient.id where doctorid = #{id};
+    </select>
+    <resultMap id="OrderMap" type="Order">
+        <id property="id" column="id"/>
+        <result property="ordertime" column="ordertime"/>
+        <result property="starttime" column="starttime"/>
+        <result property="degree" column="degree"/>
+        <result property="comment" column="comment"/>
+        <collection property="patient" ofType="Patient">
+            <id property="id" column="id"/>
+            <result property="nickname" column="nickname"/>
+        </collection>
+    </resultMap>
+
+    <select id="countOrderByOffice" resultType="Integer">
+        SELECT COUNT(order.id) from `order` INNER JOIN doctor ON doctorid = doctor.id where officeid = #{id};
+    </select>
+
+    <insert id="insertOrder">
+        INSERT into `order`(`ordertime`, `starttime`,`status`, `patientid`,`doctorid`) VALUES(#{orderTime}, #{startTime}, #{status},#{patientid}, #{doctorid});
+    </insert>
+
+    <update id="updataNum">
+    UPDATE worktime  set ordernum = #{ordernum} WHERE id = #{workTimeId};
+    </update>
+    <select id="countOrderNum" resultType="Integer">
+        select ordernum from worktime where  id = #{workTimeId};
+    </select>
+    <update id="updataOrderStatus">
+        update `order` set status = #{status} where id = #{orderid};
+    </update>
+
+    <update id="addComment">
+        update `order` set comment = #{txtarea}, degree = #{degree} where id = #{orderId};
+    </update>
+</mapper>

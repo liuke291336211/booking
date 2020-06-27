@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.DoctorDao">
+    <select id="findAll" resultMap="doctorMap">
+        select * from doctor left join office on doctor.officeid = office.id;
+    </select>
+
+    <select id="findByIdForOffice" resultMap="doctorMap">
+        SELECT doctor.id, doctorname, officeid ,officename from doctor INNER JOIN office on officeid = office.id where doctor.id = #{doctorid};
+    </select>
+    <resultMap id="doctorMap" type="Doctor">
+        <id property="id" column="id"/>
+        <result property="doctorname" column="doctorname"/>
+        <result property="phonenum" column="phonenum"/>
+        <result property="academictitle" column="academictitle"/>
+        <result property="description" column="description"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+        <collection property="office" ofType="Office">
+            <id property="id" column="id"/>
+            <result property="officename" column="officename"/>
+        </collection>
+    </resultMap>
+    <update id="setOffice" parameterType="Integer">
+        update doctor set officeid = null where officeid = #{officeid};
+    </update>
+    <update id="updataOfficeid">
+        update doctor set officeid = #{officeid} where id = #{doctorid};
+    </update>
+    <select id="findByNull" resultType="Doctor">
+        SELECT * from doctor WHERE officeid is null;
+    </select>
+
+    <insert id="addDoctor">
+        insert into doctor(doctorname, phonenum, academictitle, sex, age, description)
+         values (#{doctor.doctorname}, #{doctor.phonenum}, #{doctor.academictitle}, #{doctor.sex}, #{doctor.age}, #{doctor.description});
+    </insert>
+
+<!--    查询Schedule表-->
+    <select id="findShedule" resultType="Schedule">
+        select * from schedule;
+    </select>
+
+<!--    添加worktime表-->
+    <insert id="addWorkTime">
+        insert into worktime(doctorid, scheduleid, visitnum) values(#{doctorid}, #{scheduleid}, #{visitnum});
+    </insert>
+
+<!--    删除医生-->
+    <delete id="deleteDoctor">
+        delete from doctor where id = #{id};
+    </delete>
+
+<!--    根据id查询医生-->
+    <resultMap id="doctorOrder" type="Doctor">
+        <id property="id" column="docid"/>
+        <result property="doctorname" column="doctorname"/>
+        <result property="phonenum" column="phonenum"/>
+        <result property="academictitle" column="academictitle"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <collection property="orders" ofType="Order">
+            <id property="id"   column="id"/>
+            <result property="degree" column="degree"/>
+            <result property="comment" column="comment"/>
+        </collection>
+    </resultMap>
+    <select id="findById" resultMap="doctorOrder">
+        SELECT  doctor.id as docid, doctorname, phonenum, academictitle, sex, age, `order`.id, degree, comment FROM `doctor` LEFT JOIN `order` ON `order`.doctorid = doctor.id where doctor.id = #{doctorid};
+    </select>
+
+<!--    根据医生id查询就诊时间段-->
+    <resultMap id="doctorShedule" type="WorkTime">
+        <id property="id" column="id"/>
+        <result property="visitnum" column="visitnum"/>
+        <result property="ordernum" column="ordernum"/>
+        <collection property="scheduleList" ofType="Schedule">
+            <id property="id"   column="scheduleid"/>
+            <result property="weekday" column="weekday"/>
+            <result property="worktime" column="worktime"/>
+        </collection>
+    </resultMap>
+    <select id="findSheduleByDoctorid" resultMap="doctorShedule">
+        SELECT worktime.id, visitnum, ordernum,scheduleid, weekday, worktime FROM worktime INNER JOIN schedule ON scheduleid = schedule.id WHERE doctorid = #{doctorid};
+    </select>
+</mapper>
