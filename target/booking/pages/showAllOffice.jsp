@@ -318,7 +318,7 @@
                         <h3 class="search_hospital relatedDept_right">共有 <span class="redTow">${officeList.size()}</span> 科室</h3>
                     </div>
                     <table class="table_big xijingtable xijingan relatedDept_list">
-                        <c:forEach items="${officeList}" var="officeshow">
+                        <c:forEach items="${officeList}" var="office">
                             <tr>
                                 <td class="top wid25">
                                     <a>
@@ -327,12 +327,12 @@
                                 </td>
                                 <td class="top wid25">
                                     <ul class="unstyled hospitalShow">
-                                        <li><span class="muted">${officeshow.officename}</span>
+                                        <li><span class="muted">${office.officename}</span>
                                             <span class="marL16 label label-important">先进科室</span></li>
                                     </ul>
                                 </td>
                                 <td class="wid10">
-                                    <p><a href="${pageContext.request.contextPath}/office/showOffice.do?officeid=${officeshow.id}" class="btn btn_red">预约科室医生</a></p>
+                                    <p><a href="${pageContext.request.contextPath}/office/showOffice.do?officeid=${office.id}" class="btn btn_red">预约科室医生</a></p>
                                 </td>
                             </tr>
                         </c:forEach>

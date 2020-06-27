@@ -2,9 +2,10 @@ package com.controller;
 
 
 import com.Entity.Illness;
-import com.dao.IllnessDao;
+import com.Entity.Office;
 import com.github.pagehelper.PageInfo;
 import com.service.IIllnessService;
+import com.service.IOfficeRelationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,9 @@ public class IllnessController {
 
     @Autowired
     IIllnessService iIllnessService;
+
+    @Autowired
+    IOfficeRelationService iOfficeRelationService;
 
     @RequestMapping("/findAll.do")
     public ModelAndView findAll(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
@@ -41,5 +45,27 @@ public class IllnessController {
 
         iIllnessService.deleteById(id);
         return "redirect:findAll.do";
+    }
+
+    //查询所有疾病
+    @RequestMapping("/showIllness.do")
+    public ModelAndView showIllness(){
+        ModelAndView mv = new ModelAndView();
+        List<Illness> illnessList = iIllnessService.findAll();
+        mv.addObject("illnessList", illnessList);
+        mv.setViewName("showIllness");
+        return mv;
+    }
+
+    //根据疾病查找相关的所有科室
+    @RequestMapping("/findIllnessOffice.do")
+    public ModelAndView findIllnessOffice(Integer id) {
+        ModelAndView mv = new ModelAndView();
+        List<Office> officeList =  iOfficeRelationService.findOfficeByIllnessId(id);
+        String illnessname = iIllnessService.findIllnessname(id);
+        mv.addObject("illness", illnessname);
+        mv.addObject("officeList", officeList);
+        mv.setViewName("showIllnessOffice");
+        return mv;
     }
 }

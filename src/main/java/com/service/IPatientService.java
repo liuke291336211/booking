@@ -8,4 +8,6 @@ public interface IPatientService {
     List<Order> findOrderAllById(Integer patientId);
 
     boolean isPhonenum(String phonenum);
+
+    boolean phonenumAndEmail(String phonenum, String email, String password);
 }

@@ -397,7 +397,7 @@
 
 
                     <li class="show-down">
-                        <a href="/HospitalNav/Index?type=book">按疾病挂号预约</a>
+                        <a href="${pageContext.request.contextPath}/illness/showIllness.do">按疾病挂号预约</a>
                     </li>
                 </ul>
             </div>

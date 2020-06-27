@@ -65,6 +65,16 @@ CREATE TABLE `office` (
 	PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- 主页固定导航栏查询id是固定即在创建数据库时就创建好数据
+insert into office(`id`, `officename`) values(1, "内科");
+insert into office(`id`, `officename`) values(2, "外科");
+insert into office(`id`, `officename`) values(3, "妇产科");
+insert into office(`id`, `officename`) values(4, "皮肤性病科");
+insert into office(`id`, `officename`) values(5, "骨科");
+insert into office(`id`, `officename`) values(6, "五官科");
+
+
+
 -- 医生表（doctor）
 
 DROP TABLE IF EXISTS `doctor`;

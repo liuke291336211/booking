@@ -7,10 +7,7 @@ import com.service.impl.PatientServiceImpl;
 import com.sun.tracing.dtrace.Attributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -65,5 +62,21 @@ public class PatientLoginController {
         } else {
             return "false";
         }
+    }
+
+    @RequestMapping(value = "/passwordRecver.do", method = RequestMethod.POST)
+    public ModelAndView recver(String phonenum, String email, String password) {
+        //passWrid:邮箱和手机号不同，passWrod为空
+        //如果验证成功，则返回密码
+        boolean isRecover = patientService.phonenumAndEmail(phonenum, email, password);
+        ModelAndView mv = new ModelAndView();
+        if(isRecover){
+            //如果成功/跳转到主界面
+            mv.setViewName("patientIndex");
+        } else {
+            mv.setViewName("recoverFailer");
+        }
+
+        return mv;
     }
 }

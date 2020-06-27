@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import com.Entity.Illness;
+import com.Entity.Office;
 import com.dao.IllnessDao;
 import com.dao.OfficeRelationDao;
 import com.github.pagehelper.PageHelper;
@@ -26,6 +27,11 @@ public class IllnessServiceImpl implements IIllnessService {
     }
 
     @Override
+    public List<Illness> findAll() {
+        return illnessDao.findAll();
+    }
+
+    @Override
     public void addIllness(String illnessname) {
         illnessDao.addIllness(illnessname);
     }
@@ -35,5 +41,11 @@ public class IllnessServiceImpl implements IIllnessService {
         //先删除relation表
         officeRelationDao.deleteByIllnessid(id);
         illnessDao.deleteById(id);
+    }
+
+    @Override
+    public String findIllnessname(Integer id) {
+        Illness illness =  illnessDao.findById(id);
+        return illness.getIllnessname();
     }
 }

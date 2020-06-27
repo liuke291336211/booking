@@ -107,11 +107,11 @@
                             </tr>
                             <tbody>
                             <%int it = 0; %>
-                            <c:forEach items="${illnesses}" var="illness">
+                            <c:forEach items="${illnesses}" var="office">
 
                                 <tr data-tt-id="<%=it++%>" data-tt-parent-id="2">
                                     <td><%=it%></td>
-                                    <td>${illness.illnessname}</td>
+                                    <td>${office.illnessname}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

@@ -19,4 +19,8 @@
     <delete id="deleteById">
         delete from illness where id = #{id};
     </delete>
+
+    <select id="findById" resultType="Illness">
+        select * from illness where id = #{id};
+    </select>
 </mapper>

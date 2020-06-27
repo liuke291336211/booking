@@ -92,11 +92,11 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${illnesses}" var="illness">
+                                        <c:forEach items="${illnesses}" var="office">
                                             <tr>
-                                                <td><input name="illnessIds" type="checkbox" value="${illness.id}"></td>
-                                                <td>${illness.id}</td>
-                                                <td>${illness.illnessname}</td>
+                                                <td><input name="illnessIds" type="checkbox" value="${office.id}"></td>
+                                                <td>${office.id}</td>
+                                                <td>${office.illnessname}</td>
                                             </tr>
                                         </c:forEach>
                                         </tbody>
