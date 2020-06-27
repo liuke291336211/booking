@@ -14,4 +14,6 @@ public interface IllnessDao {
     void addIllness(String illnessname);
 
     void deleteById(Integer id);
+
+    Illness findById(Integer id);
 }

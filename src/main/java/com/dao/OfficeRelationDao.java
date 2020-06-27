@@ -1,5 +1,9 @@
 package com.dao;
 
+import com.Entity.Office;
+
+import java.util.List;
+
 public interface OfficeRelationDao {
 
     //删除relation表记录
@@ -8,4 +12,6 @@ public interface OfficeRelationDao {
     void addOfficeId(Integer officeid, Integer[] illnessids);
 
     void deleteByIllnessid(Integer id);
+
+    List<Office> findOfficeByIllnessId(Integer id);
 }

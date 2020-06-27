@@ -60,7 +60,7 @@
                 </div>
             </form>
 
-            <a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/patientLogup.jsp">注册账户</a><br>
+            <a href="${pageContext.request.contextPath}/recover.jsp">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/patientLogup.jsp">注册账户</a><br>
         </div>
         <!-- /.login-box-body -->
     </div>

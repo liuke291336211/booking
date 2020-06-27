@@ -30,4 +30,16 @@ public class PatientServiceImpl implements IPatientService {
             return true;
         }
     }
+
+    @Override
+    public boolean phonenumAndEmail(String phonenum, String email, String password) {
+        Patient patient = patientDao.findByPhone(phonenum);
+        if(patient != null && patient.getEmail().equals(email)) {
+            //ture修改密码
+            patientDao.updataPassword(phonenum, password);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -10,4 +10,9 @@
     <delete id="deleteByIllnessid">
         delete from officerelation where illnessid = #{id};
     </delete>
+
+<!--    查找疾病科室关系表-->
+    <select id="findOfficeByIllnessId" resultType="Office">
+            SELECT officeid, officename from officerelation inner join office on officeid = office.id where illnessid = #{id};
+    </select>
 </mapper>

@@ -5,7 +5,7 @@
 
 <mapper namespace="com.dao.PatientDao">
     <select id="findByPhone" resultType="Patient">
-        select id, nickname,pname ,phonenum, password from patient where phonenum = #{phonenum};
+        select id, nickname,pname , email, phonenum, password from patient where phonenum = #{phonenum};
     </select>
 
     <resultMap id="OrderMap" type="Order">
@@ -40,4 +40,8 @@
     <insert id="addPatient" parameterType="Patient">
         insert into patient(nickname, pname, phonenum, password, email, sex, age, address) values(#{patient.nickname}, #{patient.pname}, #{patient.phonenum}, #{patient.password}, #{patient.email}, #{patient.sex}, #{patient.age}, #{patient.address});
     </insert>
+<!--    修改密码-->
+    <update id="updataPassword">
+        UPDATE patient set password = #{password}	WHERE phonenum = #{phonenum};
+    </update>
 </mapper>

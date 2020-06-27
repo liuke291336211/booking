@@ -14,4 +14,6 @@ public interface PatientDao {
     List<Order> findOrderAllById(Integer patientId);
 
     void addPatient(@Param("patient") Patient patient);
+
+    void updataPassword(@Param("phonenum") String phonenum, @Param("password") String password);
 }

@@ -113,12 +113,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${illnesss.list}" var="illness">
+                            <c:forEach items="${illnesss.list}" var="office">
                                 <tr>
-                                    <td>${illness.id}</td>
-                                    <td>${illness.illnessname}</td>
+                                    <td>${office.id}</td>
+                                    <td>${office.illnessname}</td>
                                     <td class="text-center">
-                                        <button type="button" class="btn bg-olive btn-xs" onclick="location.href = '${pageContext.request.contextPath}/illness/deleteById.do?id=${illness.id}'">删除疾病</button>
+                                        <button type="button" class="btn bg-olive btn-xs" onclick="location.href = '${pageContext.request.contextPath}/illness/deleteById.do?id=${office.id}'">删除疾病</button>
                                     </td>
                                 </tr>
 
