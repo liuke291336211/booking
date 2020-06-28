@@ -65,6 +65,16 @@ CREATE TABLE `office` (
 	PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- 主页固定导航栏查询id是固定即在创建数据库时就创建好数据
+insert into office(`id`, `officename`) values(1, "内科");
+insert into office(`id`, `officename`) values(2, "外科");
+insert into office(`id`, `officename`) values(3, "妇产科");
+insert into office(`id`, `officename`) values(4, "皮肤性病科");
+insert into office(`id`, `officename`) values(5, "骨科");
+insert into office(`id`, `officename`) values(6, "五官科");
+
+
+
 -- 医生表（doctor）
 
 DROP TABLE IF EXISTS `doctor`;
@@ -110,9 +120,26 @@ DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE `schedule`(
 	`id` int AUTO_INCREMENT,
 	`weekday` varchar(50) NOT NULL COMMENT '周几',
-	`worktime` DATETIME NOT NULL COMMENT '时段',
+	`worktime` TIME NOT NULL COMMENT '时段',
 	PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 固定数据
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (1, '星期一', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (2, '星期一', '14:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (3, '星期二', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (4, '星期二', '14:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (5, '星期三', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (6, '星期三', '14:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (7, '星期四', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (8, '星期四', '14:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (9, '星期五', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (10, '星期五', '14:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (11, '星期六', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (12, '星期六', '14:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (13, '星期日', '09:00:00');
+INSERT INTO `schedule`(`id`, `weekday`, `worktime`) VALUES (14, '星期日', '14:00:00');
+
 
 -- 上班时间表（worktime）
 

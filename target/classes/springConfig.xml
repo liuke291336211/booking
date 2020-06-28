@@ -19,9 +19,12 @@
 <!--    配置连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName"    value="com.mysql.jdbc.Driver"/>
-        <property name="url"    value="jdbc:mysql://localhost:3306/booking?serverTimezone=UTC&amp;characterEncoding=utf-8"/>
+        <property name="url"    value="jdbc:mysql://127.0.0.1:3306/booking?serverTimezone=UTC&amp;characterEncoding=utf-8"/>
         <property name="username"   value="root"/>
+<!--        开发环境-->
         <property name="password"   value="123456"/>
+<!--        测试环境-->
+<!--        <property name="password"   value="liuke551816"/>-->
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

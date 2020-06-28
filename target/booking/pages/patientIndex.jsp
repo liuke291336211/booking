@@ -185,7 +185,7 @@
                         <div class="header_navbar_list">
                             <ul class="header_ill_list">
                                 <div class="header_ul_p">
-                                    <li class="header_li_list" value="4">
+                                    <li class="header_li_list" value="1">
                                     <p class="font18"><img class="header_icon_style" src="${pageContext.request.contextPath}/img/header_icon1.png">内科</p>
                                         <p class="font14">
                                             <label style="display: inline-block;cursor: pointer;" id="a814bba5-b337-42d7-9cdb-91d268773d0a" class="searchByDisease"></label>
@@ -228,7 +228,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="header_li_list" value="5">
+                                    <li class="header_li_list" value="2">
 
                                         <p class="font18" href="#"><img class="header_icon_style" src="${pageContext.request.contextPath}/img/header_icon2.png">外科</p>
                                             <p class="font14">
@@ -254,7 +254,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="header_li_list" value="13">
+                                    <li class="header_li_list" value="3">
                                         <p class="font18"><img class="header_icon_style" src="${pageContext.request.contextPath}/img/header_icon3.png">妇产科</p>
                                         <p class="font14">
                                             <label style="display: inline-block;cursor: pointer;" id="7336e201-9e62-404b-b055-c3e8d2ea8e8b" class="searchByDisease"></label>
@@ -279,7 +279,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="header_li_list" value="3">
+                                    <li class="header_li_list" value="4">
                                         <p class="font18"><img class="header_icon_style" src="${pageContext.request.contextPath}/img/header_icon4.png">皮肤性病科</p>
                                         <p class="font14">
                                             <label style="display: inline-block;cursor: pointer;" id="e0e67c16-978a-420b-808a-0079dd8c003e" class="searchByDisease"></label>
@@ -315,7 +315,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="header_li_list" value="14">
+                                    <li class="header_li_list" value="5">
                                         <p class="font18"><img class="header_icon_style" src="${pageContext.request.contextPath}/img/header_icon5.png">骨科</p>
                                         <p class="font14">
                                             <label style="display: inline-block;cursor: pointer;" id="6bcfc8c5-0db6-4d68-8094-646fdaa57c67" class="searchByDisease"></label>
@@ -336,7 +336,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="header_li_list" value="7">
+                                    <li class="header_li_list" value="6">
                                         <p class="font18"><img class="header_icon_style" src="${pageContext.request.contextPath}/img/header_icon6.png">五官科</p>
                                         <p class="font14">
                                             <label style="display: inline-block;cursor: pointer;" id="c57a741d-e92c-4f5a-b5db-3a5d1baee794" class="searchByDisease"></label>
