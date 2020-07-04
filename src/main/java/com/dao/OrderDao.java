@@ -26,4 +26,6 @@ public interface OrderDao {
     void updataOrderStatus(@Param("orderid") Integer orderid,@Param("status") Integer status);
 
     void addComment(@Param("orderId") Integer orderId,@Param("degree") Integer degree,@Param("txtarea") String txtarea);
+
+    void deleteByDoctorId(Integer id);
 }

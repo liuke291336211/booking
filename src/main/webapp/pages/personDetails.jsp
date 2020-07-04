@@ -575,7 +575,6 @@
 <script type="text/javascript">
     $(".commentDoctor").click(function () {
         var order = $(this).attr("name");
-        console.log("order" + order);
         $('#myModal').modal('show');
         $("#rate-comm-1").attr("value", order);
     });

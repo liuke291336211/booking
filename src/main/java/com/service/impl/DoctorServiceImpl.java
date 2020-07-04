@@ -81,6 +81,9 @@ public class DoctorServiceImpl implements IDoctorService {
     public void deleteDoctor(Integer id) {
         //先删除worktime表
         workTimeDao.deleteByDoctorId(id);
+        //BUG修改:再增加级联表
+        //与订单order级联
+        orderDao.deleteByDoctorId(id);
         //在删除医生表
         doctorDao.deleteDoctor(id);
     }

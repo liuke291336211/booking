@@ -12,7 +12,11 @@
     </delete>
 
 <!--    查找疾病科室关系表-->
-    <select id="findOfficeByIllnessId" resultType="Office">
+    <resultMap id="OfficeMapRela" type="Office">
+        <id property="id" column="officeid"/>
+        <result property="officename" column="officename"/>
+    </resultMap>
+    <select id="findOfficeByIllnessId" resultMap="OfficeMapRela">
             SELECT officeid, officename from officerelation inner join office on officeid = office.id where illnessid = #{id};
     </select>
 </mapper>
