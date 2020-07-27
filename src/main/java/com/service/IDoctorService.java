@@ -4,6 +4,7 @@ import com.Entity.Doctor;
 import com.Entity.DoctorTimeData;
 import com.Entity.Schedule;
 import com.Entity.WorkTime;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +24,7 @@ public interface IDoctorService {
 
     void addWorkTime(Integer[] scheduleIds, Integer nums, Integer doctorId);
 
+    @Transactional(rollbackFor = Exception.class)
     void deleteDoctor(Integer id);
 
    HashMap<Doctor, Integer> CommnetCount();

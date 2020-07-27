@@ -44,4 +44,9 @@
     <update id="addComment">
         update `order` set comment = #{txtarea}, degree = #{degree} where id = #{orderId};
     </update>
+
+<!--    根据医生ID删除订单-->
+    <delete id="deleteByDoctorId">
+        delete from `order` where doctorid = #{id};
+    </delete>
 </mapper>

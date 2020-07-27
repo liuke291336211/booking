@@ -1,6 +1,7 @@
 package com.service;
 
 import com.Entity.Order;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,7 @@ public interface IOrderService {
 
     HashMap<String, Integer> findOfficeToOrderCount();
 
+    @Transactional(rollbackFor = Exception.class)
     void addOrder(Integer Patientid, Integer doctorid, String orderTime, Integer orderId);
 
     void updataOrderStatus(Integer orderid, Integer status);

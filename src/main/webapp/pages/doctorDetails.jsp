@@ -533,14 +533,16 @@
                                 if(data[j].scheduleList[0].worktimeStr == "14:00:00"){
                                     if (data[j].ordernum < data[j].visitnum) {
                                         tdElemEvening[i].setAttribute("class","pay-money");
-                                        tdElemEvening[i].innerHTML = "<a href="+'${pageContext.request.contextPath}/book/isLogin.do?doctorid=${docotrData.id}&orderTime='+nowYear.getFullYear()+$('#day'+i).attr('value')+'_'+$('#week' + i).attr('value')+'_evening&workTimeId='+data[j].id +">"+ data[j].ordernum + "/" + data[j].visitnum + "</a>";
+                                        tdElemEvening[i].innerHTML = "<a href="+'${pageContext.request.contextPath}/book/isLogin.do?doctorid=${docotrData.id}&orderTime='+nowYear.getFullYear()
+                                            +$('#day'+i).attr('value')+'_'+$('#week' + i).attr('value')+'_evening&workTimeId='+data[j].id +">"+ data[j].ordernum + "/" + data[j].visitnum + "</a>";
                                     } else {
                                         tdElemEvening[i].innerText =  data[j].ordernum + "/" + data[j].visitnum;
                                     }
                                 } else {
                                     if (data[j].ordernum < data[j].visitnum) {
                                         tdElemMorning[i].setAttribute("class","pay-money");
-                                        tdElemMorning[i].innerHTML = "<a href="+'${pageContext.request.contextPath}/book/isLogin.do?doctorid=${docotrData.id}&orderTime='+nowYear.getFullYear()+$('#day'+i).attr('value')+'_'+$('#week' + i).attr('value')+'_morning&workTimeId=' +data[j].id +">"+ data[j].ordernum + "/" + data[j].visitnum + "</a>";
+                                        tdElemMorning[i].innerHTML = "<a href="+'${pageContext.request.contextPath}/book/isLogin.do?doctorid=${docotrData.id}&orderTime='+nowYear.getFullYear()
+                                            +$('#day'+i).attr('value')+'_'+$('#week' + i).attr('value')+'_morning&workTimeId=' +data[j].id +">"+ data[j].ordernum + "/" + data[j].visitnum + "</a>";
                                     } else {
                                         tdElemMorning[i].innerText =  data[j].ordernum + "/" + data[j].visitnum;
                                     }
@@ -556,12 +558,6 @@
 
     });
 
-    function doSearch() {
-        var kWord = $("#SearchWord").val();
-        if (kWord != null && kWord != "") {
-            window.location.href = "/Search/FullTextSearch/" + kWord;
-        }
-    }
     $("#SearchWord").keydown(function (e) {
         if (e.keyCode == 13) {
             var kWord = $("#SearchWord").val();
